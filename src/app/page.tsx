@@ -8,6 +8,10 @@ const Countdown = () => {
   const [countdownMessage, setCountdownMessage] = useState("");
   const [daysLeft, setDaysLeft] = useState(0);
 
+  const formatTimeUnit = (timeUnit: number) => {
+    return timeUnit < 10 ? `0${timeUnit}` : timeUnit;
+  };
+
   const calculateCountdown = () => {
     const now = new Date().getTime();
     const distance = targetDate.getTime() - now;
@@ -22,7 +26,13 @@ const Countdown = () => {
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      setCountdownMessage(`${hours}:${minutes}:${seconds}`);
+      const formattedHours = formatTimeUnit(hours);
+      const formattedMinutes = formatTimeUnit(minutes);
+      const formattedSeconds = formatTimeUnit(seconds);
+
+      setCountdownMessage(
+        `${formattedHours}:${formattedMinutes}:${formattedSeconds}`
+      );
     }
   };
 
