@@ -50,7 +50,7 @@ const Countdown = () => {
 
   return (
     <div className="main">
-      <h1>Countdown until 14/09.</h1>
+      <h1>Countdown until 14/09</h1>
       <h1>{`${daysLeft} days left`}</h1>
       <h1>{countdownMessage}</h1>
     </div>
