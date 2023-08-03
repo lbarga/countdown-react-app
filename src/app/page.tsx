@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const Countdown = () => {
-  const targetDate = new Date("2023-08-14");
+  const targetDate = new Date("2023-08-14T00:00:00-03:00");
 
   const [countdownMessage, setCountdownMessage] = useState("");
   const [daysLeft, setDaysLeft] = useState(0);
@@ -25,7 +25,7 @@ const Countdown = () => {
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      const formattedHours = formatTimeUnit(hours + 3);
+      const formattedHours = formatTimeUnit(hours);
       const formattedMinutes = formatTimeUnit(minutes);
       const formattedSeconds = formatTimeUnit(seconds);
 
